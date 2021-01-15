@@ -1,37 +1,99 @@
-## Welcome to GitHub Pages
+<style>
+    body { font-size:  12pt; }  /* 10pt is the default size */
+    p  { line-height: 1.2em; }  /* 1.4em is the default line-height */    
+    p  { margin:        0em; }  /* .5em is the default top and bottom margin */    
 
-You can use the [editor on GitHub](https://github.com/robinmattern/FormR1/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+    img[src*="#img1"] { 
+         width:        600px; 
+         margin:       5px  0px 15px 40px;    /* top, right, bottom, left */
+         box-shadow:   5px 10px 12px  4px #888888;        
+         }
+    img[src*="#img2"] { 
+         width:        500px; 
+         margin:       5px  0px 15px 40px;    /* top, right, bottom, left */
+         box-shadow:   5px 10px 12px  4px #888888;        
+        }
+    img[src*="#img3"] { 
+         width:        300px; 
+         margin:       5px  0px 15px 40px;    /* top, right, bottom, left */
+         box-shadow:   5px 10px 12px  4px #888888;        
+        }
+</style>
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Instructions for creating a VM on Vultr
 
-### Markdown
+### 1. Signin or create an account on vultr.com
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### 2. Deploy new Server (Create Instance)
+  
+[![Vultr Create Instance](images/et0301-01_Vultr-Create-Instance.png#img2)](images/et0301-01_Vultr-Create-Instance.mp4 "Setup Vultr")
 
-```markdown
-Syntax highlighted code block
+1. Choose Server: Cloud Compute
+2. Server Location: Atlanta     
+3. Server Type: Ubuntu 18.04 x64  
+4. Server Size: 25GB SSD  $5/mo.  
+5. Add SSH Key
+    + Select an Existing Key, or
+    + Use Puttygen to create or import your existing public key and cut and paste it from puttygen into the vultr form.
+    
+![PuttyGen-Public key](images/et0301-03_PuttyGen-highlight-for-paste.png#img2 "PuttyGen-Public key")
 
-# Header 1
-## Header 2
-### Header 3
+![Setup Bitvise](images/et0301-02_Bitvise_Setup.png#img1 "Bitvise Setup")
 
-- Bulleted
-- List
+![Vultr-Add SSH key, Blank](images/et0301-04_Vultr-add-SSH-key-blank.png#img3 "Blank Key")
 
-1. Numbered
-2. List
+![Vultr-Add SSH keyTest](images/et0301-05_Vultr-add-SSH-key-pasted.png#img3 "Pasted Key")
 
-**Bold** and _Italic_ and `Code` text
 
-[Link](url) and ![Image](src)
-```
+6. Server Host Name and Label: FormRx-Vultr for both
+    
+7. Click Deploy Now
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-### Jekyll Themes
+### 3. Open Vultr VM Console
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/robinmattern/FormR1/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+[![Vultr Open Console](images/et0301-06_Vultr-console.png#img1)](images/et0301-06_Vultr-console.mp4 "Vultr Open Console")
 
-### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
++ Click on Products
++ then the Server Name i.e. FormRx-Vultr
++ then the View Console icon
+
+1. Click in the console window and then enter login: root and press enter.
+
+2. From the Vultr server window click the copy password icon.
+
+3. Go back to the console window click the Send clipboard button and press enter. 
+    
+You will see the Welcome screen for Ubuntu and the command prompt:
+
+    root@FormRx-Vultr:~#
+
+### 4. Download and/or open Bitvise SSH / SFTP browser.
+
+
+[![Setup Bitvise](images/et0301-02_Bitvise_Setup.png#img1_Bitvise_Setup.png)](images/et0301-02_Bitvise_Setup.mp4 "Setup Bitvise")
+
+
+ 1. Save file immediately as FormRx-Vultr
+
+ 2. Enter Host: 45.32.219.12 (get from Vultr window)
+
+ 3. Enter Username: root
+
+ 4. Initial Method: publickey+password
+
+ 5. Select Client Key from 2.
+    
+ 6. above
+    
+ 7. Check store encrypted password in profile, then enter root password form Vultr window. 
+    
+ 8. Click the Options tab and On Login check Open Terminal and Open SFTP
+    
+ 9. Click Save Profile
+    
+10. Click the Login Button. 
+    You will be presented with Console and SFTP windows.
+
+
